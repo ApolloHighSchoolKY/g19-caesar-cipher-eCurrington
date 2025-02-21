@@ -13,12 +13,17 @@ public class G19 {
 
     	CaesarCipher cipher = new CaesarCipher(4);
 
+
+		//I couldnt figure out how to do the special characters and spaces for the encryption and decryption
+		
     	System.out.println(cipher.encrypt("hello world!"));
     	System.out.println(cipher.decrypt("ukq zez ep!"));
 
     	//Create a new cipher using the shifter(#) method
     	//Encrypt and decrypt a message with your new cipher
 
+		System.out.println(cipher.encrypt("insert cool message"));
+    	System.out.println(cipher.decrypt("e zkjp hega pdeo"));
     }
 
 
