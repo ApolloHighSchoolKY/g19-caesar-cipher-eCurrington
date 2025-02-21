@@ -45,43 +45,51 @@ public class CaesarCipher {
 
     public String encrypt(String message){
         String encryption = "";
+        boolean found = false;
         for(int i=0; i<message.length(); i++)
         {
+            found = false;
             for(int j=0; j<alphabet.length; j++)
             {
                 
                 if(message.charAt(i) == alphabet[j])
                 {
+                    found = true;
                     encryption += shifted[j];
                 }
-                else if(message.charAt(i) == ' ')
-                {
-                    encryption += " ";
-                }
+                
             }
+
+            if(found == false)
+            encryption += message.charAt(i);
         }
-        System.out.println(encryption);
+        
         return encryption;
     }
 
     public String decrypt(String message){
+
         String decryption = "";
+        boolean found = false;
+
         for(int i=0; i<message.length(); i++)
         {
+            found = false;
             for(int j=0; j<shifted.length; j++)
             {
                 
                 if(message.charAt(i) == shifted[j])
                 {
+                    found = true;
                     decryption += alphabet[j];
                 }
-                else if(message.charAt(i) == ' ')
-                {
-                    decryption += " ";
-                }
+                
             }
+            
+            if(found == false)
+            decryption += message.charAt(i);
         }
-        System.out.println(decryption);
+        
         return decryption;
     }
 
@@ -97,13 +105,17 @@ public class CaesarCipher {
             
         }
         
-        System.out.println("Alphabet: ");   
+        System.out.println("Alphabet: ");  
         for(int i=0; i<26; i++)
             System.out.print(alphabet[i]);
+
         System.out.println("\n");
+
         System.out.println("Shifted: "); 
         for(int i=0; i<26; i++)
             System.out.print(shifted[i]);
+
+        System.out.println("\n");
         
             
        
